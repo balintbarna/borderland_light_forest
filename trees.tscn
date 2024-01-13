@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://djcylko1pu8hj"]
+
+[ext_resource type="PackedScene" uid="uid://dq8h4qei7dbsf" path="res://trees/low_poly_pine_tree/scene.gltf" id="1_urstn"]
+[ext_resource type="PackedScene" uid="uid://161k2b1laq3s" path="res://trees/pine_tree/scene.gltf" id="2_fvtmg"]
+
+[node name="Trees" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_urstn")]
+transform = Transform3D(0.825123, 0, -0.564953, 0, 1, 0, 0.564953, 0, 0.825123, -0.515064, 0, -0.994218)
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("1_urstn")]
+transform = Transform3D(0.93901, 0, 0.343889, 0, 1, 0, -0.343889, 0, 0.93901, 0, 0, 7.57098)
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("1_urstn")]
+transform = Transform3D(0.882866, 0, 0.469626, 0, 1, 0, -0.469626, 0, 0.882866, 3.24304, 0, -3.52828)
+
+[node name="Sketchfab_Scene4" parent="." instance=ExtResource("1_urstn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29343, 0, -8.82202)
+
+[node name="Sketchfab_Scene5" parent="." instance=ExtResource("1_urstn")]
+transform = Transform3D(0.347607, 0, -0.93764, 0, 1, 0, 0.93764, 0, 0.347607, -9.69812, 0, 0.0599203)
+
+[node name="Sketchfab_Scene6" parent="." instance=ExtResource("1_urstn")]
+transform = Transform3D(-0.638405, 0, 0.7697, 0, 1, 0, -0.7697, 0, -0.638405, 3.58779, 0, -10.4176)
+
+[node name="Sketchfab_Scene7" parent="." instance=ExtResource("1_urstn")]
+transform = Transform3D(-0.256289, 0, -0.9666, 0, 1, 0, 0.9666, 0, -0.256289, 2.60625, 0, 1.06378)
+
+[node name="Sketchfab_Scene8" parent="." instance=ExtResource("1_urstn")]
+transform = Transform3D(0.30024, 0, 0.953864, 0, 1, 0, -0.953864, 0, 0.30024, -5.58482, 0, -8.51021)
+
+[node name="Sketchfab_Scene9" parent="." instance=ExtResource("2_fvtmg")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 8.94837, 0, 1.13878)
+
+[node name="Sketchfab_Scene10" parent="." instance=ExtResource("2_fvtmg")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -4.59958, 0, -12.1922)
+
+[node name="Sketchfab_Scene11" parent="." instance=ExtResource("2_fvtmg")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -6.18536, 0, 0)
