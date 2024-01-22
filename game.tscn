@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://djcylko1pu8hj" path="res://trees.tscn" id="1_3w08y"]
 [ext_resource type="Environment" uid="uid://dh2k32l684ufu" path="res://heavy_env.tres" id="1_c5445"]
 [ext_resource type="PackedScene" uid="uid://b5rlkrd2xh7jv" path="res://viewer.tscn" id="2_tkkm4"]
-[ext_resource type="PackedScene" uid="uid://d012gcad876in" path="res://light.tscn" id="3_h3i2n"]
+[ext_resource type="PackedScene" uid="uid://bm0vn7o1d6xo0" path="res://auto_placer.tscn" id="3_yh7qr"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ll4uy"]
 radius = 0.3
@@ -23,15 +23,21 @@ base_speed = 2
 
 [node name="AllLights" type="Node3D" parent="."]
 
-[node name="Light" parent="AllLights" instance=ExtResource("3_h3i2n")]
+[node name="AutoPlacer" parent="AllLights" instance=ExtResource("3_yh7qr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.09855, 3, -6.06515)
+max_distance = 8.0
 
-[node name="Light2" parent="AllLights" instance=ExtResource("3_h3i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97564, 0.810741, -7.71516)
-modulation_offset = 1.0
+[node name="AutoPlacer2" parent="AllLights" instance=ExtResource("3_yh7qr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6357, 3, 0)
+max_distance = 8.0
 
-[node name="Light3" parent="AllLights" instance=ExtResource("3_h3i2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97851, 1.12828, 9.2227)
-modulation_offset = 2.0
+[node name="AutoPlacer3" parent="AllLights" instance=ExtResource("3_yh7qr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -18.6774)
+max_distance = 8.0
+
+[node name="AutoPlacer4" parent="AllLights" instance=ExtResource("3_yh7qr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.72003, 3, 11.5201)
+max_distance = 8.0
 
 [node name="Forest" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5194, 0, 12.6831)

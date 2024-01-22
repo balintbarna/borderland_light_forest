@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm0vn7o1d6xo0"]
+
+[ext_resource type="Script" path="res://autoplacer.gd" id="1_hvbos"]
+[ext_resource type="PackedScene" uid="uid://d012gcad876in" path="res://light.tscn" id="2_w03qd"]
+
+[node name="AutoPlacer" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+script = ExtResource("1_hvbos")
+scene = ExtResource("2_w03qd")
+number_of_placements = 5
+max_distance = 5.0
