@@ -1,0 +1,19 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dh2k32l684ufu"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_y42ws"]
+turbidity = 2.0
+energy_multiplier = 0.2
+
+[sub_resource type="Sky" id="Sky_1vkdt"]
+sky_material = SubResource("PhysicalSkyMaterial_y42ws")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_1vkdt")
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_length = 5.0

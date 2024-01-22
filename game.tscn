@@ -1,75 +1,45 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvxm7xb5y2h1k"]
+[gd_scene load_steps=6 format=3 uid="uid://bvxm7xb5y2h1k"]
 
 [ext_resource type="PackedScene" uid="uid://djcylko1pu8hj" path="res://trees.tscn" id="1_3w08y"]
-[ext_resource type="Script" path="res://Viewer.gd" id="1_k4qwb"]
-
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_y42ws"]
-turbidity = 2.0
-energy_multiplier = 0.2
-
-[sub_resource type="Sky" id="Sky_1vkdt"]
-sky_material = SubResource("PhysicalSkyMaterial_y42ws")
-
-[sub_resource type="Environment" id="Environment_pmbku"]
-background_mode = 2
-sky = SubResource("Sky_1vkdt")
-sdfgi_enabled = true
-sdfgi_use_occlusion = true
-glow_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.1
-volumetric_fog_emission_energy = 0.0
-volumetric_fog_length = 5.0
+[ext_resource type="Environment" uid="uid://dh2k32l684ufu" path="res://heavy_env.tres" id="1_c5445"]
+[ext_resource type="PackedScene" uid="uid://b5rlkrd2xh7jv" path="res://viewer.tscn" id="2_tkkm4"]
+[ext_resource type="PackedScene" uid="uid://d012gcad876in" path="res://light.tscn" id="3_h3i2n"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ll4uy"]
 radius = 0.3
 height = 1.8
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npejf"]
-shading_mode = 2
-diffuse_mode = 3
-specular_mode = 2
-disable_ambient_light = true
-disable_fog = true
-albedo_color = Color(1, 0.207843, 1, 1)
-emission_enabled = true
-emission = Color(1, 0, 1, 1)
-emission_energy_multiplier = 16.0
-rim_enabled = true
-
-[sub_resource type="SphereMesh" id="SphereMesh_rm56o"]
-material = SubResource("StandardMaterial3D_npejf")
-radius = 0.03
-height = 0.06
-radial_segments = 16
-rings = 8
-
 [node name="Game" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_pmbku")
+environment = ExtResource("1_c5445")
 
 [node name="Person" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.949305, 0, 0.314357, 0, 1, 0, -0.314357, 0, -0.949305, -2.00112, 0.936452, -1.52043)
 mesh = SubResource("CapsuleMesh_ll4uy")
 
-[node name="Trees" parent="." instance=ExtResource("1_3w08y")]
+[node name="Viewer" parent="." instance=ExtResource("2_tkkm4")]
+base_speed = 2
 
-[node name="Trees2" parent="." instance=ExtResource("1_3w08y")]
+[node name="AllLights" type="Node3D" parent="."]
+
+[node name="Light" parent="AllLights" instance=ExtResource("3_h3i2n")]
+
+[node name="Light2" parent="AllLights" instance=ExtResource("3_h3i2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97564, 0.810741, -7.71516)
+modulation_offset = 1.0
+
+[node name="Light3" parent="AllLights" instance=ExtResource("3_h3i2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97851, 1.12828, 9.2227)
+modulation_offset = 2.0
+
+[node name="Forest" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5194, 0, 12.6831)
+
+[node name="Trees" parent="Forest" instance=ExtResource("1_3w08y")]
+
+[node name="Trees2" parent="Forest" instance=ExtResource("1_3w08y")]
 transform = Transform3D(0.0445435, 0, 0.999007, 0, 1, 0, -0.999007, 0, 0.0445435, 5.85317, 0, -27.9125)
 
-[node name="Trees3" parent="." instance=ExtResource("1_3w08y")]
+[node name="Trees3" parent="Forest" instance=ExtResource("1_3w08y")]
 transform = Transform3D(0.905879, 0, 0.423535, 0, 1, 0, -0.423535, 0, 0.905879, 18.9727, 0, -9.71036)
-
-[node name="Orb" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20895, 0.781648, 0)
-mesh = SubResource("SphereMesh_rm56o")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Orb"]
-light_color = Color(1, 0, 1, 1)
-
-[node name="Viewer" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72751, 0.551149, 0)
-script = ExtResource("1_k4qwb")
-
-[node name="Camera3D" type="Camera3D" parent="Viewer"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5rlkrd2xh7jv"]
+
+[ext_resource type="Script" path="res://Viewer.gd" id="1_fsm6l"]
+
+[node name="Viewer" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.72751, 0.551149, 0)
+script = ExtResource("1_fsm6l")
+
+[node name="Camera3D" type="Camera3D" parent="."]
